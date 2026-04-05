@@ -23,8 +23,19 @@ find . -type f -not -path './.git/*' -not -name 'setup-from-template.sh' | while
   fi
 done
 
-# Clean up this script
-rm setup-from-template.sh
+# Set up the development environment
+source scripts/enable-venv.sh
 
-echo "Template configured for '$NAME'."
-echo "Next: source scripts/enable-venv.sh && make all"
+# Verify everything passes
+make all
+
+# Initial commit
+git add -A
+git commit -m "Initial scaffold from python-lib-template"
+
+# Clean up this script
+git rm setup-from-template.sh
+git commit -m "Remove template setup script"
+
+echo ""
+echo "Done! '$NAME' is ready."
