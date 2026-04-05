@@ -16,6 +16,6 @@ typecheck:
 	uv run pyright PACKAGE_NAME/
 
 test:
-	uv run pytest tests/ -v || [ $? -eq 5 ]
+	uv run pytest tests/ -v || [ $$? -eq 5 ]
 
 all: format-check lint typecheck test
