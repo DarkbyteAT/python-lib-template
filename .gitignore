@@ -10,3 +10,7 @@ build/
 .ruff_cache/
 .pyright/
 .worktrees/
+
+# Claude Code ephemeral state
+.claude/worktrees/
+.superpowers/
