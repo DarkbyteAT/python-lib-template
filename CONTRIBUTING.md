@@ -11,7 +11,24 @@ source scripts/enable-venv.sh
 ## Code Conventions
 
 - **Python 3.11+** — `X | Y` union syntax, `list[T]`/`dict[K,V]` generics
-- **NumPy-style docstrings**
+- **Google-style docstrings**
+
+## Docstring Style
+
+Google-style docstrings with LaTeX math support:
+
+```python
+"""Summary line.
+
+Args:
+    param: Description of param.
+
+Returns:
+    Description of return value.
+"""
+```
+
+Use `$...$` for inline math and `$$...$$` for display math in docstrings.
 
 ## Quality Gates
 
